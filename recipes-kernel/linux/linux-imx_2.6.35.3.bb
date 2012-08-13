@@ -28,6 +28,8 @@ SRC_URI = "git://git.freescale.com/imx/linux-2.6-imx.git \
            file://002_Return_ERESTARTSYS_from_IPU_GET_EVENT.patch \
            file://003_Sanitise_ipu_interrupt_return_value.patch \
            file://defconfig \
+           file://1244-Enables-appuart-on-imx233-LQFP-128-pin-package.-I2C-.patch \
+           file://1246-Easycap-backport.patch \
           "
 
 #EXTRA_OEMAKE += "V=1"

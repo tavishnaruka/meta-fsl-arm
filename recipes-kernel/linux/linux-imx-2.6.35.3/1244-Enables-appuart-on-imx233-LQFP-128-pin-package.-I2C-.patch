@@ -1,0 +1,83 @@
+From 9842be46771fa8c01e32146304c603b516b4877e Mon Sep 17 00:00:00 2001
+From: Tavish Naruka <tavishnaruka@gmail.com>
+Date: Mon, 30 Jul 2012 12:42:11 +0530
+Subject: [PATCH 1244/1244] Enables appuart on imx233 LQFP 128 pin package.
+ I2C remapped to alternate pins available whch
+ conflict with LCD pins.
+
+---
+ arch/arm/mach-mx23/mx23_pins.h    |    8 ++++----
+ arch/arm/mach-mx23/mx23evk_pins.c |   12 ++++++------
+ 2 files changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/arch/arm/mach-mx23/mx23_pins.h b/arch/arm/mach-mx23/mx23_pins.h
+index 9811bfd..899562e 100644
+--- a/arch/arm/mach-mx23/mx23_pins.h
++++ b/arch/arm/mach-mx23/mx23_pins.h
+@@ -57,10 +57,10 @@
+ #define PINID_GPMI_RDN		MXS_PIN_ENCODE(0, 25)
+ #define PINID_AUART1_CTS	MXS_PIN_ENCODE(0, 26)
+ #define PINID_AUART1_RTS	MXS_PIN_ENCODE(0, 27)
+-#define PINID_AUART1_RX		MXS_PIN_ENCODE(0, 28)
+-#define PINID_AUART1_TX		MXS_PIN_ENCODE(0, 29)
+-#define PINID_I2C_SCL		MXS_PIN_ENCODE(0, 30)
+-#define PINID_I2C_SDA		MXS_PIN_ENCODE(0, 31)
++#define PINID_AUART1_RX		MXS_PIN_ENCODE(0, 31)
++#define PINID_AUART1_TX		MXS_PIN_ENCODE(0, 30)
++#define PINID_I2C_SCL		MXS_PIN_ENCODE(1, 23)
++#define PINID_I2C_SDA		MXS_PIN_ENCODE(1, 24)
+ 
+ /* Bank 1 */
+ #define PINID_LCD_D00		MXS_PIN_ENCODE(1, 0)
+diff --git a/arch/arm/mach-mx23/mx23evk_pins.c b/arch/arm/mach-mx23/mx23evk_pins.c
+index cdf86cf..38b2ab6 100644
+--- a/arch/arm/mach-mx23/mx23evk_pins.c
++++ b/arch/arm/mach-mx23/mx23evk_pins.c
+@@ -42,14 +42,14 @@ static struct pin_desc mx23evk_fixed_pins[] = {
+ 	{
+ 	 .name  = "AUART1.RX",
+ 	 .id    = PINID_AUART1_RX,
+-	 .fun   = PIN_FUN1,
++	 .fun   = PIN_FUN3,
+ 	 },
+ 	{
+ 	 .name  = "AUART1.TX",
+ 	 .id    = PINID_AUART1_TX,
+-	 .fun   = PIN_FUN1,
++	 .fun   = PIN_FUN3,
+ 	 },
+-	{
++	/*{
+ 	 .name  = "AUART1.CTS",
+ 	 .id    = PINID_AUART1_CTS,
+ 	 .fun   = PIN_FUN1,
+@@ -58,7 +58,7 @@ static struct pin_desc mx23evk_fixed_pins[] = {
+ 	 .name  = "AUART1.RTS",
+ 	 .id    = PINID_AUART1_RTS,
+ 	 .fun   = PIN_FUN1,
+-	 },
++	 },*/
+ #endif
+ 
+ #ifdef CONFIG_MXS_AUART2_DEVICE_ENABLE
+@@ -88,7 +88,7 @@ static struct pin_desc mx23evk_fixed_pins[] = {
+ 	{
+ 	 .name = "I2C_SCL",
+ 	 .id = PINID_I2C_SCL,
+-	 .fun = PIN_FUN1,
++	 .fun = PIN_FUN2,
+ 	 .strength = PAD_4MA,
+ 	 .voltage = PAD_3_3V,
+ 	 .drive	= 1,
+@@ -96,7 +96,7 @@ static struct pin_desc mx23evk_fixed_pins[] = {
+ 	{
+ 	 .name = "I2C_SDA",
+ 	 .id = PINID_I2C_SDA,
+-	 .fun = PIN_FUN1,
++	 .fun = PIN_FUN2,
+ 	 .strength = PAD_4MA,
+ 	 .voltage = PAD_3_3V,
+ 	 .drive	= 1,
+-- 
+1.7.9.5
+
