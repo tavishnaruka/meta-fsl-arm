@@ -12,7 +12,7 @@ index 6bc36b9..6cf89a0 100644
 --- a/linux_prep/cmdlines/iMX28_EVK.txt
 +++ b/linux_prep/cmdlines/iMX28_EVK.txt
 @@ -1 +1 @@
--console=ttyAM0,115200 root=/dev/mmcblk0p3 rw rootwait
+-console=ttyAMA0,115200 root=/dev/mmcblk0p3 rw rootwait
 +console=ttyAMA0,115200 root=/dev/mmcblk0p2 rw rootwait
 diff --git a/linux_prep/cmdlines/stmp378x_dev.txt b/linux_prep/cmdlines/stmp378x_dev.txt
 index 9a717eb..fdb7390 100644
@@ -25,6 +25,6 @@ index 9a717eb..fdb7390 100644
 -
 -
 -
-+console=ttyAM0,115200 root=/dev/mmcblk0p2 rw rootwait ssp1=mmc lcd_panel=tvenc_ntsc no_console_suspend
-+console=ttyAM0,115200 root=/dev/mmcblk0p2 rw rootwait ssp1=mmc lcd_panel=tvenc_ntsc
-+console=ttyAM0,115200 ssp1=spi1 ubi.mtd=2 root=ubi0:rootfs0 rootfstype=ubifs lcd_panel=tvenc_ntsc
++console=ttyAMA0,115200 root=/dev/mmcblk0p2 rw rootwait ssp1=mmc lcd_panel=tvenc_ntsc no_console_suspend
++console=ttyAMA0,115200 root=/dev/mmcblk0p2 rw rootwait ssp1=mmc lcd_panel=tvenc_ntsc
++console=ttyAMA0,115200 ssp1=spi1 ubi.mtd=2 root=ubi0:rootfs0 rootfstype=ubifs lcd_panel=tvenc_ntsc
